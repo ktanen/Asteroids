@@ -13,8 +13,10 @@ def main():
         for event in pygame.event.get():
             if event.type == pygame.QUIT:
                 return
+        ship.update(dt)
         screen.fill("black")
         ship.draw(screen)
+
         pygame.display.flip()
         milliseconds = clock.tick(60)
         dt = milliseconds / 1000
